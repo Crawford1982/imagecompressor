@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Image Compressor | Free Secure Local Image Compression</title>
+    <meta name="description" content="Compress your images securely and privately in your browser. A free, zero-upload image shrinker that keeps your sensitive data 100% local.">
+    <meta name="keywords" content="private image compressor, secure local image compression, no upload image shrinker, client-side image compression, secure image optimizer">
+    <meta name="author" content="Private Image Compressor">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://privateimagecompressor.com/" />
+
+    <!-- SVG Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://privateimagecompressor.com/">
+    <meta property="og:title" content="Private Image Compressor | Secure Local Image Compression">
+    <meta property="og:description" content="Compress your images securely and privately in your browser. A zero-upload image shrinker that keeps your sensitive data local.">
+    <meta property="og:image" content="https://privateimagecompressor.com/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://privateimagecompressor.com/">
+    <meta property="twitter:title" content="Private Image Compressor | Secure Local Image Compression">
+    <meta property="twitter:description" content="Compress your images securely and privately in your browser. A zero-upload image shrinker that keeps your sensitive data local.">
+    <meta property="twitter:image" content="https://privateimagecompressor.com/og-image.jpg">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Private Image Compressor",
+      "url": "https://privateimagecompressor.com/",
+      "description": "A 100% private, local, and zero-upload image compressor running entirely in your browser.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Zero-upload client-side compression",
+        "Supports JPG, PNG, and WebP",
+        "100% Data Privacy"
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics loaded only after consent (see consent banner below) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
+    <div class="max-w-[800px] mx-auto px-4 py-12">
+        <!-- Header / Hero -->
+        <header class="text-center mb-10">
+            <div class="flex justify-center mb-4">
+                <i data-lucide="shield-check" class="w-12 h-12 text-blue-600"></i>
+            </div>
+            <h1 class="text-4xl font-extrabold text-slate-900 tracking-tight mb-3">Private Image Compressor</h1>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                100% Private, Local, and Zero-Upload. Compress JPG, PNG, and WebP images securely right in your browser.
+            </p>
+        </header>
+
+        <!-- Main Tool -->
+        <main class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8 mb-12">
+            
+            <!-- Upload Zone -->
+            <div id="drop-zone" class="border-2 border-dashed border-slate-300 rounded-xl p-10 text-center cursor-pointer hover:bg-slate-50 transition-colors mb-8">
+                <input type="file" id="file-input" class="hidden" accept="image/jpeg, image/png, image/webp">
+                <i data-lucide="upload-cloud" class="w-10 h-10 text-slate-400 mx-auto mb-4"></i>
+                <p class="text-slate-700 font-medium mb-1">Click to upload or drag and drop</p>
+                <p class="text-slate-500 text-sm">JPG, PNG, or WebP (max 20 MB on phone, 50 MB on desktop)</p>
+            </div>
+
+            <!-- Editor Area (Hidden by default) -->
+            <div id="editor-area" class="hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <!-- Preview -->
+                    <div class="space-y-3">
+                        <h3 class="font-semibold text-slate-800 flex items-center gap-2">
+                            <i data-lucide="image" class="w-4 h-4 text-slate-500"></i> Image Preview
+                        </h3>
+                        <div class="bg-slate-100 rounded-lg overflow-hidden flex items-center justify-center aspect-video border border-slate-200">
+                            <img id="image-preview" class="max-w-full max-h-full object-contain" src="" alt="Preview">
+                        </div>
+                    </div>
+
+                    <!-- Controls & Stats -->
+                    <div class="space-y-6 flex flex-col justify-center">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <label for="quality-slider" class="font-semibold text-slate-800 text-sm">Compression Quality</label>
+                                <span id="quality-value" class="text-sm font-medium text-blue-600">80%</span>
+                            </div>
+                            <input type="range" id="quality-slider" min="1" max="100" value="80" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                            <p class="text-xs text-slate-500 mt-2">Lower quality = smaller file size.</p>
+                        </div>
+
+                        <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+                            <h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">Live Stats</h4>
+                            <div class="space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-slate-600">Original Size</span>
+                                    <span id="stat-original" class="text-sm font-medium text-slate-900">--</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-slate-600">New Size</span>
+                                    <span id="stat-new" class="text-sm font-medium text-blue-600">--</span>
+                                </div>
+                                <div class="pt-2 mt-2 border-t border-slate-200 flex justify-between items-center">
+                                    <span class="text-sm font-medium text-slate-800">% Saved</span>
+                                    <span id="stat-saved" class="text-sm font-bold text-emerald-600">--</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-end border-t border-slate-100 pt-6">
+                    <button id="btn-reset" class="px-5 py-2.5 text-sm font-medium text-slate-600 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors">
+                        Start Over
+                    </button>
+                    <button id="btn-download" class="px-5 py-2.5 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 shadow-sm">
+                        <i data-lucide="download" class="w-4 h-4"></i>
+                        Download Compressed Image
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Buy Me a Coffee (Ko-fi) -->
+        <div class="flex justify-center mb-16">
+            <a href="https://ko-fi.com/X8X71V44OQ" target="_blank" rel="noopener noreferrer"><img height="36" style="border:0px;height:36px;" src="https://storage.ko-fi.com/cdn/kofi6.png?v=6" border="0" alt="Buy Me a Coffee at ko-fi.com" /></a>
+        </div>
+
+        <!-- SEO Article -->
+        <article class="mt-16 pt-12 border-t border-slate-200 max-w-3xl mx-auto pb-20">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6">Why Local, Private Image Compression is Safer for Your Business</h2>
+            
+            <div class="space-y-6 text-slate-700 leading-relaxed text-lg">
+                <p>In today's digital landscape, optimizing images for web performance is a standard practice. However, when dealing with confidential company assets, unreleased product photos, or documents containing Personally Identifiable Information (PII), using a standard online image shrinker becomes a massive security risk. That is exactly why we built this <strong>private image compressor</strong>—to give you professional-grade file reduction without ever compromising your data.</p>
+                
+                <h3 class="text-2xl font-semibold text-slate-900 mt-10 mb-4">The Hidden Danger of Traditional Online Image Compressors</h3>
+                <p>When you use most popular free image compression tools, you are fundamentally losing control of your files. The process usually works like this:</p>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                    <li>Your sensitive image is uploaded via the internet to a third-party server.</li>
+                    <li>The server processes the image, creating a temporary copy on their hard drives.</li>
+                    <li>You download the compressed version, hoping the server deletes your original file.</li>
+                </ul>
+                <p>For individuals, this might be acceptable. But for businesses, freelancers under NDAs, or healthcare professionals, uploading proprietary data to an unknown server violates strict data privacy frameworks like <a href="https://gdpr.eu/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline"><strong>GDPR</strong></a>, <a href="https://www.hhs.gov/hipaa/index.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline"><strong>HIPAA</strong></a>, and CCPA. Furthermore, many "free" tools subsidize their costs by using your uploaded images to train AI models.</p>
+                
+                <h3 class="text-2xl font-semibold text-slate-900 mt-10 mb-4">How "Zero-Upload" Local Image Compression Works</h3>
+                <p>Our secure image compressor flips the traditional model on its head by utilizing <strong>client-side processing</strong>. Thanks to modern HTML5 Canvas technology, your web browser (whether that is Chrome, Safari, or Edge) has the native power to manipulate images directly on your own device.</p>
+                <p>When you drag and drop a JPG, PNG, or WebP file into our tool, the file <strong>never leaves your computer</strong>. There are no backend servers, no cloud storage buckets, and no data transfers. The JavaScript code instructs your browser to redraw and compress the image locally using your device's own memory. Once it is shrunk, it is saved directly back to your hard drive.</p>
+                
+                <h3 class="text-2xl font-semibold text-slate-900 mt-10 mb-4">The Benefits of Browser-Based Image Shrinking</h3>
+                <ul class="list-disc pl-6 space-y-4 mb-6">
+                    <li><strong>100% Data Privacy:</strong> Because there are no servers involved, it is technically impossible for us (or any hackers) to view, store, or steal your images.</li>
+                    <li><strong>Lightning Fast Speeds:</strong> You are no longer restricted by slow internet upload speeds or massive 5MB file limits. The compression happens instantly, dictated only by the speed of your local hardware.</li>
+                    <li><strong>Works Offline:</strong> Once the webpage is loaded, you can completely disconnect from your Wi-Fi and the tool will continue to compress your files flawlessly.</li>
+                    <li><strong>Unlimited Usage:</strong> Without expensive server costs on our end, we don't need to put you behind a paywall or limit you to "5 compressions per day."</li>
+                </ul>
+                
+                <h3 class="text-2xl font-semibold text-slate-900 mt-10 mb-4">Optimize JPGs, PNGs, and WebP Files Securely</h3>
+                <p>Whether you need to shrink a massive uncompressed PNG for a website background, or reduce the file size of a JPG for an email attachment, local compression handles it perfectly. By adjusting the quality slider, you maintain total control over the balance between visual fidelity and file size reduction. Use the secure tool above to find your perfect baseline, protect your clients' data, and speed up your workflow without the risk.</p>
+            </div>
+        </article>
+
+        <footer class="text-center py-8 text-slate-500 text-sm border-t border-slate-200 mt-12">
+            <a href="privacy.html" class="text-slate-600 hover:text-slate-900 hover:underline">Privacy policy</a>
+        </footer>
+    </div>
+
+    <!-- EU cookie consent: analytics only loaded after Accept -->
+    <div id="cookie-consent" class="fixed bottom-0 left-0 right-0 bg-slate-800 text-slate-200 text-sm px-4 py-3 flex flex-wrap items-center justify-center gap-3 shadow-lg z-50">
+        <span>We use analytics to improve the site. No image data is ever collected.</span>
+        <div class="flex items-center gap-2">
+            <a href="privacy.html" class="text-blue-300 hover:text-white underline">Privacy</a>
+            <button id="cookie-consent-accept" type="button" class="px-4 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors">Accept</button>
+        </div>
+    </div>
+
+    <script>
+        // Cookie consent: load GA only after user accepts
+        (function() {
+            var CONSENT_KEY = 'cookie_consent_analytics';
+            var consentBar = document.getElementById('cookie-consent');
+            var acceptBtn = document.getElementById('cookie-consent-accept');
+
+            function loadGA() {
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = 'https://www.googletagmanager.com/gtag/js?id=G-N1KRJD5JYT';
+                document.head.appendChild(s);
+                gtag('js', new Date());
+                gtag('config', 'G-N1KRJD5JYT');
+            }
+
+            if (localStorage.getItem(CONSENT_KEY) === 'true') {
+                loadGA();
+                consentBar.classList.add('hidden');
+            }
+
+            acceptBtn.addEventListener('click', function() {
+                localStorage.setItem(CONSENT_KEY, 'true');
+                consentBar.classList.add('hidden');
+                loadGA();
+            });
+        })();
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // App Logic
+        const dropZone = document.getElementById('drop-zone');
+        const fileInput = document.getElementById('file-input');
+        const editorArea = document.getElementById('editor-area');
+        const imagePreview = document.getElementById('image-preview');
+        const qualitySlider = document.getElementById('quality-slider');
+        const qualityValue = document.getElementById('quality-value');
+        const statOriginal = document.getElementById('stat-original');
+        const statNew = document.getElementById('stat-new');
+        const statSaved = document.getElementById('stat-saved');
+        const btnReset = document.getElementById('btn-reset');
+        const btnDownload = document.getElementById('btn-download');
+
+        const PHONE_MAX = 20 * 1024 * 1024;   // 20 MB on phone
+        const DESKTOP_MAX = 30 * 1024 * 1024; // 30 MB on desktop, no warning
+        const ABSOLUTE_MAX = 50 * 1024 * 1024; // 50 MB max, with warning above 30 MB
+        let currentFile = null;
+        let originalSize = 0;
+        let compressedBlob = null;
+        let originalImageObj = new Image();
+        let currentPreviewUrl = null; // so we can revoke blob URLs and avoid memory leaks
+
+        function isMobile() {
+            return window.matchMedia('(max-width: 768px)').matches || (navigator.maxTouchPoints > 2);
+        }
+
+        // Format bytes to human readable
+        function formatBytes(bytes, decimals = 2) {
+            if (!+bytes) return '0 Bytes';
+            const k = 1024;
+            const dm = decimals < 0 ? 0 : decimals;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
+        }
+
+        // Handle Drag & Drop
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropZone.addEventListener(eventName, () => {
+                dropZone.classList.add('border-blue-500', 'bg-blue-50');
+                dropZone.classList.remove('border-slate-300');
+            }, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, () => {
+                dropZone.classList.remove('border-blue-500', 'bg-blue-50');
+                dropZone.classList.add('border-slate-300');
+            }, false);
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            if (files.length) handleFile(files[0]);
+        });
+
+        dropZone.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', function() {
+            if (this.files.length) handleFile(this.files[0]);
+        });
+
+        function handleFile(file) {
+            if (!file.type.match(/image\/(jpeg|png|webp)/)) {
+                alert('Please upload a JPG, PNG, or WebP image.');
+                return;
+            }
+            const onPhone = isMobile();
+            if (file.size > ABSOLUTE_MAX) {
+                alert(`This image is too large (${formatBytes(file.size)}). Maximum size is ${formatBytes(ABSOLUTE_MAX)}.`);
+                return;
+            }
+            if (onPhone && file.size > PHONE_MAX) {
+                alert(`On phones the maximum size is ${formatBytes(PHONE_MAX)} for best performance. Your file is ${formatBytes(file.size)}. Use a laptop or desktop for larger images.`);
+                return;
+            }
+            if (!onPhone && file.size > DESKTOP_MAX) {
+                const ok = confirm(`This is a large file (${formatBytes(file.size)}). Your computer may slow down or run out of memory. Continue anyway?`);
+                if (!ok) return;
+            }
+
+            currentFile = file;
+            originalSize = file.size;
+            statOriginal.textContent = formatBytes(originalSize);
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                originalImageObj.onload = () => {
+                    dropZone.classList.add('hidden');
+                    editorArea.classList.remove('hidden');
+                    compressImage();
+                };
+                originalImageObj.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function compressImage() {
+            if (!currentFile || !originalImageObj.src) return;
+
+            const quality = parseInt(qualitySlider.value) / 100;
+            
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            canvas.width = originalImageObj.width;
+            canvas.height = originalImageObj.height;
+            
+            ctx.drawImage(originalImageObj, 0, 0, canvas.width, canvas.height);
+            
+            // Keep original mime type, fallback to jpeg if not supported well
+            let mimeType = currentFile.type;
+            
+            canvas.toBlob((blob) => {
+                compressedBlob = blob;
+                const newSize = blob.size;
+                
+                // Update stats
+                statNew.textContent = formatBytes(newSize);
+                
+                let savedPercent = ((originalSize - newSize) / originalSize) * 100;
+                if (savedPercent < 0) savedPercent = 0; // Sometimes compressed is larger if original was highly optimized
+                
+                statSaved.textContent = `${savedPercent.toFixed(1)}%`;
+                statSaved.className = savedPercent > 0 ? 'text-sm font-bold text-emerald-600' : 'text-sm font-bold text-amber-600';
+                
+                // Update preview (revoke previous blob URL to avoid memory leaks)
+                if (currentPreviewUrl) URL.revokeObjectURL(currentPreviewUrl);
+                currentPreviewUrl = URL.createObjectURL(blob);
+                imagePreview.src = currentPreviewUrl;
+
+                // Track successful compression event in Google Analytics
+                if (typeof gtag === 'function') {
+                    gtag('event', 'image_compressed', {
+                        'event_category': 'Tool Usage',
+                        'original_size': originalSize,
+                        'compressed_size': newSize,
+                        'percent_saved': savedPercent.toFixed(2)
+                    });
+                }
+                
+            }, mimeType, quality);
+        }
+
+        qualitySlider.addEventListener('input', (e) => {
+            qualityValue.textContent = `${e.target.value}%`;
+            // Debounce compression slightly for better slider feel
+            clearTimeout(window.compressTimeout);
+            window.compressTimeout = setTimeout(compressImage, 100);
+        });
+
+        btnReset.addEventListener('click', () => {
+            if (currentPreviewUrl) {
+                URL.revokeObjectURL(currentPreviewUrl);
+                currentPreviewUrl = null;
+            }
+            currentFile = null;
+            compressedBlob = null;
+            fileInput.value = '';
+            editorArea.classList.add('hidden');
+            dropZone.classList.remove('hidden');
+            imagePreview.src = '';
+        });
+
+        btnDownload.addEventListener('click', () => {
+            if (!compressedBlob) return;
+            
+            const url = URL.createObjectURL(compressedBlob);
+            const a = document.createElement('a');
+            a.href = url;
+            
+            // Generate new filename
+            const originalName = currentFile.name;
+            const lastDot = originalName.lastIndexOf('.');
+            const name = originalName.substring(0, lastDot);
+            const ext = originalName.substring(lastDot);
+            a.download = `${name}-compressed${ext}`;
+            
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            // Track successful download event in Google Analytics
+            if (typeof gtag === 'function') {
+                gtag('event', 'image_downloaded', {
+                    'event_category': 'Tool Usage',
+                    'file_extension': ext
+                });
+            }
+        });
+    </script>
+</body>
+</html>
