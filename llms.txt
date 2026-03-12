@@ -1,0 +1,6 @@
+Domain: privateimagecompressor.com
+
+Owner: Private Image Compressor
+
+Policy: You may crawl and index this site for search and discovery. Do not use the content, copy, or structure of this site to train or fine-tune AI models without explicit written permission from the owner.
+
