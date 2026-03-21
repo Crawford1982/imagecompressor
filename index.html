@@ -9,24 +9,24 @@
     <meta name="author" content="Private Image Compressor">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://privateimagecompressor.com/" />
+    <link rel="canonical" href="https://www.privateimagecompressor.com/" />
 
     <!-- SVG Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
 
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://privateimagecompressor.com/">
+    <meta property="og:url" content="https://www.privateimagecompressor.com/">
     <meta property="og:title" content="Private Image Compressor | Secure Local Image Compression">
     <meta property="og:description" content="Compress your images securely and privately in your browser. A zero-upload image shrinker that keeps your sensitive data local.">
-    <meta property="og:image" content="https://privateimagecompressor.com/og-image.png">
+    <meta property="og:image" content="https://www.privateimagecompressor.com/og-image.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://privateimagecompressor.com/">
+    <meta property="twitter:url" content="https://www.privateimagecompressor.com/">
     <meta property="twitter:title" content="Private Image Compressor | Secure Local Image Compression">
     <meta property="twitter:description" content="Compress your images securely and privately in your browser. A zero-upload image shrinker that keeps your sensitive data local.">
-    <meta property="twitter:image" content="https://privateimagecompressor.com/og-image.png">
+    <meta property="twitter:image" content="https://www.privateimagecompressor.com/og-image.png">
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -34,7 +34,7 @@
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "Private Image Compressor",
-      "url": "https://privateimagecompressor.com/",
+      "url": "https://www.privateimagecompressor.com/",
       "description": "A 100% private, local, and zero-upload image compressor running entirely in your browser.",
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": "All",
@@ -51,6 +51,19 @@
     }
     </script>
 
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Private Image Compressor",
+      "url": "https://www.privateimagecompressor.com/",
+      "logo": "https://www.privateimagecompressor.com/og-image.png",
+      "description": "Free, private, browser-based image compression. Your images never leave your device.",
+      "sameAs": ["https://github.com/Crawford1982/imagecompressor"]
+    }
+    </script>
+
     <!-- Google Analytics loaded only after consent (see consent banner below) -->
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -61,6 +74,50 @@
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans antialiased">
+    <nav class="bg-slate-900 text-white px-4 py-3 text-sm" id="site-nav">
+        <div class="max-w-[800px] mx-auto flex items-center justify-between gap-4">
+            <a href="/" class="font-bold text-white hover:text-blue-300 transition-colors shrink-0">🛡️ PrivateImageCompressor</a>
+            <!-- Desktop links -->
+            <div class="hidden sm:flex gap-4 flex-wrap text-slate-300">
+                <a href="/pic-article-1-gdpr-risks.html" class="hover:text-white transition-colors">GDPR &amp; Safety</a>
+                <a href="/pic-article-2-compress-without-uploading.html" class="hover:text-white transition-colors">No-Upload Guide</a>
+                <a href="/pic-article-6-is-tinypng-safe.html" class="hover:text-white transition-colors">Is TinyPNG Safe?</a>
+                <a href="/pic-article-7-compress-to-size.html" class="hover:text-white transition-colors">Compress to Size</a>
+                <a href="/pic-article-8-compress-for-email.html" class="hover:text-white transition-colors">Email Guide</a>
+                <a href="/pic-article-11-compress-for-social-media.html" class="hover:text-white transition-colors">Social Media</a>
+                <a href="/pic-article-12-best-image-compressors.html" class="hover:text-white transition-colors">Best Compressors</a>
+            </div>
+            <!-- Mobile hamburger -->
+            <button id="nav-toggle" class="sm:hidden text-slate-300 hover:text-white p-1" aria-label="Open guides menu" aria-expanded="false">
+                <svg id="nav-icon-open" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                <svg id="nav-icon-close" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <!-- Mobile drawer -->
+        <div id="nav-drawer" class="sm:hidden hidden max-w-[800px] mx-auto pt-2 pb-1 flex flex-col gap-1 border-t border-slate-700 mt-2">
+            <a href="/pic-article-1-gdpr-risks.html" class="block py-2 px-1 text-slate-300 hover:text-white transition-colors">GDPR &amp; Safety</a>
+            <a href="/pic-article-2-compress-without-uploading.html" class="block py-2 px-1 text-slate-300 hover:text-white transition-colors">No-Upload Guide</a>
+            <a href="/pic-article-6-is-tinypng-safe.html" class="block py-2 px-1 text-slate-300 hover:text-white transition-colors">Is TinyPNG Safe?</a>
+            <a href="/pic-article-7-compress-to-size.html" class="block py-2 px-1 text-slate-300 hover:text-white transition-colors">Compress to Size</a>
+            <a href="/pic-article-8-compress-for-email.html" class="block py-2 px-1 text-slate-300 hover:text-white transition-colors">Email Guide</a>
+            <a href="/pic-article-11-compress-for-social-media.html" class="block py-2 px-1 text-slate-300 hover:text-white transition-colors">Social Media Guide</a>
+            <a href="/pic-article-12-best-image-compressors.html" class="block py-2 px-1 text-slate-300 hover:text-white transition-colors">Best Compressors</a>
+        </div>
+    </nav>
+    <script>
+        (function(){
+            var btn=document.getElementById('nav-toggle');
+            var drawer=document.getElementById('nav-drawer');
+            var iconOpen=document.getElementById('nav-icon-open');
+            var iconClose=document.getElementById('nav-icon-close');
+            if(btn){btn.addEventListener('click',function(){
+                var open=drawer.classList.toggle('hidden');
+                btn.setAttribute('aria-expanded', String(!open));
+                iconOpen.classList.toggle('hidden');
+                iconClose.classList.toggle('hidden');
+            });}
+        })();
+    </script>
     <div class="max-w-[800px] mx-auto px-4 py-12">
         <!-- Header / Hero -->
         <header class="text-center mb-10">
@@ -106,6 +163,20 @@
                             </div>
                             <input type="range" id="quality-slider" min="1" max="100" value="80" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
                             <p class="text-xs text-slate-500 mt-2">Lower quality = smaller file size.</p>
+                        </div>
+
+                        <!-- Output Format Selector -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label class="font-semibold text-slate-800 text-sm">Output Format</label>
+                                <span id="avif-badge" class="hidden text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-medium">Chrome / Edge only</span>
+                            </div>
+                            <div class="flex gap-2" id="format-btns">
+                                <button data-fmt="image/jpeg" class="format-btn flex-1 py-1.5 text-sm font-semibold rounded-lg border transition-colors bg-blue-600 text-white border-blue-600">JPG</button>
+                                <button data-fmt="image/webp" class="format-btn flex-1 py-1.5 text-sm font-semibold rounded-lg border transition-colors bg-white text-slate-600 border-slate-300 hover:border-blue-400 hover:text-blue-600">WebP</button>
+                                <button data-fmt="image/avif" class="format-btn flex-1 py-1.5 text-sm font-semibold rounded-lg border transition-colors bg-white text-slate-600 border-slate-300 hover:border-blue-400 hover:text-blue-600" id="btn-avif">AVIF</button>
+                            </div>
+                            <p id="avif-warning" class="hidden mt-2 text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2">⚠️ AVIF encoding isn't supported in this browser. Use Chrome or Edge to export AVIF files.</p>
                         </div>
 
                         <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
@@ -158,6 +229,13 @@
                 <li><a href="pic-article-3-compress-for-web.html" class="text-blue-600 hover:underline">How to Compress Images for the Web Without Losing Quality</a></li>
                 <li><a href="pic-article-4-jpg-vs-png-vs-webp.html" class="text-blue-600 hover:underline">JPG vs PNG vs WebP: Which Image Format Should You Use?</a></li>
                 <li><a href="pic-article-5-client-side-compression.html" class="text-blue-600 hover:underline">What Is Client-Side Image Compression?</a></li>
+                <li><a href="pic-article-6-is-tinypng-safe.html" class="text-blue-600 hover:underline">Is TinyPNG Safe? What Really Happens to Your Images</a></li>
+                <li><a href="pic-article-7-compress-to-size.html" class="text-blue-600 hover:underline">How to Compress an Image to a Specific File Size (100KB, 200KB, 500KB)</a></li>
+                <li><a href="pic-article-8-compress-for-email.html" class="text-blue-600 hover:underline">How to Compress Images for Email (Gmail, Outlook &amp; More)</a></li>
+                <li><a href="pic-article-9-reduce-file-size.html" class="text-blue-600 hover:underline">How to Reduce Image File Size Without Losing Quality</a></li>
+                <li><a href="pic-article-10-avif-vs-webp.html" class="text-blue-600 hover:underline">AVIF vs WebP in 2026: Which Format Should You Use?</a></li>
+                <li><a href="pic-article-11-compress-for-social-media.html" class="text-blue-600 hover:underline">Compress Images for Instagram, WhatsApp &amp; Social Media</a></li>
+                <li><a href="pic-article-12-best-image-compressors.html" class="text-blue-600 hover:underline">Best Free Image Compressors 2026: Honest Comparison</a></li>
             </ul>
         </section>
 
@@ -261,6 +339,58 @@
         let originalImageObj = new Image();
         let currentPreviewUrl = null; // so we can revoke blob URLs and avoid memory leaks
 
+        // ── Format selector ──────────────────────────────────────────────
+        let selectedFormat = 'image/jpeg';
+        let avifSupported = false;
+
+        // Probe AVIF support: draw a 1×1 canvas and ask for image/avif blob.
+        // Resolves true only if the browser returns a non-null blob with size > 0.
+        (function probeAvif() {
+            const c = document.createElement('canvas');
+            c.width = c.height = 1;
+            c.toBlob(function(blob) {
+                avifSupported = !!(blob && blob.size > 0);
+                const badge  = document.getElementById('avif-badge');
+                const btnAvif = document.getElementById('btn-avif');
+                if (!avifSupported) {
+                    // Dim the AVIF button so users see it exists but know it needs Chrome/Edge
+                    btnAvif.classList.add('opacity-50');
+                    btnAvif.title = 'Requires Chrome 94+ or Edge 94+';
+                } else {
+                    // Show the browser badge so users know it is a Chrome/Edge feature
+                    badge.classList.remove('hidden');
+                }
+            }, 'image/avif', 0.5);
+        })();
+
+        document.getElementById('format-btns').addEventListener('click', function(e) {
+            var btn = e.target.closest('.format-btn');
+            if (!btn) return;
+
+            var fmt = btn.dataset.fmt;
+            var warning = document.getElementById('avif-warning');
+
+            // If AVIF selected but not supported, show warning and bail
+            if (fmt === 'image/avif' && !avifSupported) {
+                warning.classList.remove('hidden');
+                return;
+            }
+            warning.classList.add('hidden');
+
+            selectedFormat = fmt;
+
+            // Update button active styles
+            document.querySelectorAll('.format-btn').forEach(function(b) {
+                b.classList.remove('bg-blue-600', 'text-white', 'border-blue-600');
+                b.classList.add('bg-white', 'text-slate-600', 'border-slate-300');
+            });
+            btn.classList.remove('bg-white', 'text-slate-600', 'border-slate-300');
+            btn.classList.add('bg-blue-600', 'text-white', 'border-blue-600');
+
+            // Re-compress with new format
+            if (currentFile) compressImage();
+        });
+
         function isMobile() {
             return window.matchMedia('(max-width: 768px)').matches || (navigator.maxTouchPoints > 2);
         }
@@ -361,9 +491,9 @@
             
             ctx.drawImage(originalImageObj, 0, 0, canvas.width, canvas.height);
             
-            // Keep original mime type, fallback to jpeg if not supported well
-            let mimeType = currentFile.type;
-            
+            // Use the user-selected output format
+            const mimeType = selectedFormat;
+
             canvas.toBlob((blob) => {
                 compressedBlob = blob;
                 const newSize = blob.size;
@@ -422,13 +552,14 @@
             const a = document.createElement('a');
             a.href = url;
             
-            // Generate new filename
+            // Generate new filename — extension follows the chosen output format
+            const fmtExtMap = { 'image/jpeg': '.jpg', 'image/webp': '.webp', 'image/avif': '.avif' };
             const originalName = currentFile.name;
             const lastDot = originalName.lastIndexOf('.');
-            const name = originalName.substring(0, lastDot);
-            const ext = originalName.substring(lastDot);
+            const name = lastDot !== -1 ? originalName.substring(0, lastDot) : originalName;
+            const ext = fmtExtMap[selectedFormat] || '.jpg';
             a.download = `${name}-compressed${ext}`;
-            
+
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
@@ -438,7 +569,8 @@
             if (typeof gtag === 'function') {
                 gtag('event', 'image_downloaded', {
                     'event_category': 'Tool Usage',
-                    'file_extension': ext
+                    'file_extension': ext,
+                    'output_format': selectedFormat
                 });
             }
         });

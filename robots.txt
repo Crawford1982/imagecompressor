@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://privateimagecompressor.com/sitemap.xml
+Sitemap: https://www.privateimagecompressor.com/sitemap.xml
