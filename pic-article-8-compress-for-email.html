@@ -84,6 +84,8 @@
     footer a{color:#60a5fa;text-decoration:none;}
     .footer-links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:10px;}
   </style>
+  <!-- Google Analytics -->
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}</script>
 </head>
 <body>
 <nav><div class="nav-inner">
@@ -282,4 +284,6 @@
   <p>PrivateImageCompressor.com — Free, private, browser-based image compression.</p>
   <p style="margin-top:6px;">© 2026 PrivateImageCompressor.com</p>
 </footer>
+<div id="cookie-consent" class="fixed bottom-0 left-0 right-0 bg-slate-800 text-slate-200 text-sm px-4 py-3 flex flex-wrap items-center justify-center gap-3 shadow-lg z-50"><span>We use analytics to improve the site. No image data is ever collected.</span><div class="flex items-center gap-2"><a href="/privacy.html" class="text-blue-300 hover:text-white underline">Privacy</a><button id="cookie-consent-accept" type="button" class="px-4 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors">Accept</button></div></div>
+<script>(function(){var K="cookie_consent_analytics";var b=document.getElementById("cookie-consent");var a=document.getElementById("cookie-consent-accept");function g(){var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-N1KRJD5JYT";document.head.appendChild(s);gtag("js",new Date());gtag("config","G-N1KRJD5JYT");}if(localStorage.getItem(K)==="true"){g();b.classList.add("hidden");}a.addEventListener("click",function(){localStorage.setItem(K,"true");b.classList.add("hidden");g();});})();</script>
 </body></html>
