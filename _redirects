@@ -1,0 +1,3 @@
+# Netlify: send apex to canonical www host
+https://privateimagecompressor.com/*  https://www.privateimagecompressor.com/:splat  301!
+http://privateimagecompressor.com/*   https://www.privateimagecompressor.com/:splat  301!

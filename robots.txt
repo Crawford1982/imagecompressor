@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /_zip_extract/
 
 Sitemap: https://www.privateimagecompressor.com/sitemap.xml
