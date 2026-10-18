@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Private Image Compressor</title>
+    <meta name="description" content="About Private Image Compressor and its creator James Crawford. Learn about our mission to provide secure, privacy-focused image compression.">
+    <link rel="canonical" href="https://www.privateimagecompressor.com/about.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.privateimagecompressor.com/about.html">
+    <meta property="og:title" content="About | Private Image Compressor">
+    <meta property="og:description" content="About Private Image Compressor and its creator James Crawford. Learn about our mission to provide secure, privacy-focused image compression.">
+    <meta property="og:image" content="https://www.privateimagecompressor.com/og-image.png">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
+    <nav class="bg-slate-900 text-white px-4 py-3 text-sm" id="site-nav">
+        <div class="max-w-[800px] mx-auto flex items-center justify-between gap-4">
+            <a href="/" class="font-bold text-white hover:text-blue-300 transition-colors shrink-0">🛡️ PrivateImageCompressor</a>
+            <div class="hidden sm:flex gap-4 flex-wrap text-slate-300">
+                <a href="/about.html" class="hover:text-white transition-colors">About</a>
+                <a href="/articles.html" class="hover:text-white transition-colors">All Guides</a>
+                <a href="/privacy.html" class="hover:text-white transition-colors">Privacy</a>
+            </div>
+            <button id="nav-toggle" class="sm:hidden text-slate-300 hover:text-white p-1" aria-label="Open menu" aria-expanded="false">
+                <svg id="nav-icon-open" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                <svg id="nav-icon-close" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <div id="nav-drawer" class="sm:hidden hidden max-w-[800px] mx-auto pt-2 pb-1 flex flex-col gap-1 border-t border-slate-700 mt-2">
+            <a href="/about.html" class="block py-2 px-1 text-slate-300 hover:text-white transition-colors">About</a>
+            <a href="/articles.html" class="block py-2 px-1 text-slate-300 hover:text-white transition-colors">All Guides</a>
+            <a href="/privacy.html" class="block py-2 px-1 text-slate-300 hover:text-white transition-colors">Privacy</a>
+        </div>
+    </nav>
+    <script>
+        (function(){
+            var btn=document.getElementById('nav-toggle');
+            var drawer=document.getElementById('nav-drawer');
+            var iconOpen=document.getElementById('nav-icon-open');
+            var iconClose=document.getElementById('nav-icon-close');
+            if(btn){btn.addEventListener('click',function(){
+                var open=drawer.classList.toggle('hidden');
+                btn.setAttribute('aria-expanded', String(!open));
+                iconOpen.classList.toggle('hidden');
+                iconClose.classList.toggle('hidden');
+            });}
+        })();
+    </script>
+
+    <div class="max-w-[800px] mx-auto px-4 py-12">
+        <header class="mb-10">
+            <a href="index.html" class="text-blue-600 hover:text-blue-700 font-medium text-sm mb-6 inline-block">← Back to Home</a>
+            <div class="flex justify-center mb-4">
+                <i data-lucide="info" class="w-12 h-12 text-blue-600"></i>
+            </div>
+            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight text-center">About Private Image Compressor</h1>
+        </header>
+
+        <main class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8 space-y-8">
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Our Mission</h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    Private Image Compressor was created to provide a secure, privacy-focused way to compress images without uploading them to external servers. In an era where data privacy matters more than ever, we believe users should have complete control over their files.
+                </p>
+                <p class="text-slate-700 leading-relaxed">
+                    Our tool runs entirely in your browser using modern web technologies, ensuring that your images never leave your device. Whether you're working with sensitive business documents, client photos under NDA, or personal images you simply want to keep private, our compressor provides professional-grade results with zero privacy compromise.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">About the Creator</h2>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    Private Image Compressor was created and is maintained by <strong>James Crawford</strong>, who developed this tool to address the growing need for privacy-respecting image compression solutions.
+                </p>
+                <p class="text-slate-700 leading-relaxed">
+                    The project is open source and available on <a href="https://github.com/Crawford1982/imagecompressor" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">GitHub</a>, reflecting our commitment to transparency and community-driven development.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">How It Works</h2>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <div class="bg-blue-100 rounded-lg p-2 shrink-0">
+                            <i data-lucide="upload" class="w-5 h-5 text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-slate-900 mb-1">Client-Side Processing</h3>
+                            <p class="text-slate-700 text-sm">All compression happens directly in your browser using HTML5 Canvas API and JavaScript. No server uploads required.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="bg-blue-100 rounded-lg p-2 shrink-0">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-slate-900 mb-1">100% Private</h3>
+                            <p class="text-slate-700 text-sm">Your images never leave your device. No storage, no tracking, no data collection of any kind.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="bg-blue-100 rounded-lg p-2 shrink-0">
+                            <i data-lucide="zap" class="w-5 h-5 text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-slate-900 mb-1">Fast & Free</h3>
+                            <p class="text-slate-700 text-sm">Process images instantly with no file size limits (beyond browser memory). Completely free with unlimited compressions.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Supported Formats</h2>
+                <p class="text-slate-700 leading-relaxed mb-3">
+                    Private Image Compressor supports the most common image formats used on the web:
+                </p>
+                <ul class="list-disc pl-6 text-slate-700 space-y-2">
+                    <li><strong>JPEG/JPG</strong> — Universal compatibility, ideal for photos</li>
+                    <li><strong>PNG</strong> — Lossless compression, perfect for graphics and screenshots</li>
+                    <li><strong>WebP</strong> — Modern format with excellent compression and browser support</li>
+                    <li><strong>AVIF</strong> — Next-generation format with superior compression (Chrome/Edge only)</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 mb-4">Contact & Support</h2>
+                <p class="text-slate-700 leading-relaxed mb-3">
+                    Have questions, suggestions, or found a bug? We'd love to hear from you:
+                </p>
+                <ul class="text-slate-700 space-y-2">
+                    <li>• Open an issue on our <a href="https://github.com/Crawford1982/imagecompressor" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">GitHub repository</a></li>
+                    <li>• Support the project on <a href="https://ko-fi.com/X8X71V44OQ" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Ko-fi</a></li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="text-center py-8 text-slate-500 text-sm border-t border-slate-200 mt-12">
+            <div class="flex justify-center gap-4 mb-2">
+                <a href="/" class="text-slate-600 hover:text-slate-900 hover:underline">Home</a>
+                <a href="about.html" class="text-slate-600 hover:text-slate-900 hover:underline">About</a>
+                <a href="articles.html" class="text-slate-600 hover:text-slate-900 hover:underline">Guides</a>
+                <a href="privacy.html" class="text-slate-600 hover:text-slate-900 hover:underline">Privacy</a>
+            </div>
+            <p class="text-slate-500 text-xs mt-2">Created by James Crawford</p>
+        </footer>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
